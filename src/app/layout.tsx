@@ -29,17 +29,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-  <header className="border-b border-gray-200">
+  <header className="border-b border-border-subtle bg-white">
     <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <Link href="/" className="text-lg font-semibold tracking-tight text-gray-900">
+      <Link href="/" className="text-lg font-bold tracking-tight text-foreground">
         BASH
       </Link>
-      <Link
-        href="/wishlist"
-        className="text-sm font-medium text-gray-700 hover:text-black transition-colors"
-      >
-        Wishlist
-      </Link>
+      <Link href="/wishlist" className="text-sm font-medium text-muted hover:text-foreground transition-colors">Wishlist</Link>
     </nav>
   </header>
   {children}

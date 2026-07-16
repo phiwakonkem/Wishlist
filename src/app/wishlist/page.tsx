@@ -17,7 +17,7 @@ export default async function WishlistPage() {
         <p className="text-gray-500 mb-6">Your wishlist is empty.</p>
         <Link
           href="/"
-          className="inline-block bg-black text-white text-sm px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+          className="inline-block bg-foreground text-background text-sm px-6 py-3 rounded-md hover:opacity-90 transition-opacity"
         >
           Continue Shopping
         </Link>
