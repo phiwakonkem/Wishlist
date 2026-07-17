@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -20,11 +21,19 @@ export async function POST(request: Request) {
     await prisma.wishlist.delete({
       where: { productId },
     });
+
+    revalidatePath("/");
+    revalidatePath("/wishlist");
+
     return NextResponse.json({ wishlisted: false });
   } else {
     await prisma.wishlist.create({
       data: { productId },
     });
+
+    revalidatePath("/");
+    revalidatePath("/wishlist");
+    
     return NextResponse.json({ wishlisted: true });
   }
 }

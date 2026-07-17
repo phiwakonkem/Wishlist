@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
+export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const wishlistEntries = await prisma.wishlist.findMany({
     select: { productId: true },
